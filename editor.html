@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="data:,">
+  <title>发布 · 管理</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <a href="index.html">← 浏览</a>
+      <span class="tb-title">发布</span>
+      <span style="width:52px"></span>
+    </header>
+
+    <main class="editor-wrap">
+      <section class="card-block" id="gate" hidden>
+        <div class="pass-gate">
+          <input type="password" id="passInput" placeholder="访问口令" autocomplete="current-password">
+          <button class="btn-primary" id="passBtn">进入</button>
+        </div>
+      </section>
+
+      <section class="card-block composer" id="composer" hidden>
+        <textarea id="text" placeholder="说点什么…" maxlength="2000" rows="4"></textarea>
+        <div class="previews" id="previews"></div>
+        <div class="composer-actions">
+          <div class="pick-group">
+            <button class="btn-ghost" id="btnAlbum" type="button">🖼 相册</button>
+            <button class="btn-ghost" id="btnCamera" type="button">📷 拍照</button>
+          </div>
+          <span class="counter" id="counter">0/9</span>
+          <button class="btn-primary" id="btnPublish" type="button">发布</button>
+        </div>
+        <input type="file" id="fileAlbum" accept="image/*" multiple hidden>
+        <input type="file" id="fileCamera" accept="image/*" capture="environment" hidden>
+      </section>
+
+      <h2 class="sec-title" id="listTitle" hidden>已发布</h2>
+      <div id="manageList"></div>
+    </main>
+  </div>
+
+  <script type="module" src="editor.js"></script>
+</body>
+</html>
